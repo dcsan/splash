@@ -18,6 +18,7 @@ class FamRender
     # Rig some famo.us deps
     Engine = require('famous/core/Engine')
     Engine.setOptions({appMode: false})
+    console.log('Famous options', Engine.options)
     famous.polyfills
     famous.core.famous
 

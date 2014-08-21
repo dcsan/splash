@@ -7,6 +7,7 @@ Package.on_use(function(api) {
     console.log('splash.on_use')
 
     api.use([
+      'famono',
       'iron-router', 
       'templating',
       'ui',
