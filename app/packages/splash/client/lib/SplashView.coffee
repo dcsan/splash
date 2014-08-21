@@ -1,25 +1,10 @@
 class SplashView
   
-  constructor: () ->
+  constructor: (@famr) ->
     console.log('Splash.new')
     if !@initDone
-      @init()
       @draw()
-
-  init: () ->
-    # Rig some famo.us deps
-    Engine = require('famous/core/Engine')
-    Engine.setOptions({appMode: false})
-    famous.polyfills
-    famous.core.famous
-
-    opts = {
-      appMode: false
-    }
-
-    famDiv = window.document.getElementById("famDiv")
-    @mainContext = famous.core.Engine.createContext(famDiv)
-    @renderController = new famous.views.RenderController()
+      @initDone = true
 
   draw: () ->
     @surfaces = []
@@ -38,18 +23,18 @@ class SplashView
         })
       )
 
-    @renderController.show(@surfaces[0])
+    @famr.renderController.show(@surfaces[0])
 
     famous.core.Engine.on "click", () =>
       console.log("clicked", @counter)
-      next = (@counter++ + 1) % @surfaces.length
-      @renderController.show(@surfaces[next])
+      @next = (@counter++ + 1) % @surfaces.length
+      @famr.renderController.show(@surfaces[@next])
 
     @mod = new famous.core.Modifier({
       origin: [.5, .5]
     })
       
-    @mainContext.add(@mod).add(@renderController)
+    @famr.mainContext.add(@mod).add(@famr.renderController)
 
     @addButton()
 
@@ -66,4 +51,11 @@ class SplashView
       console.log("clicked")
       Router.go("/chapters")
 
-    @mainContext.add(button)
+    @famr.mainContext.add(button)
+
+  hide: () ->
+    @famr.renderController.hide()
+
+  show: () ->
+    console.log('splash.show')
+    @famr.renderController.show(@surfaces[@counter])

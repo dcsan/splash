@@ -23,6 +23,7 @@ Package.on_use(function(api) {
     // client
     api.add_files([
       'client/lib/SplashView.coffee',
+      'client/lib/FamRender.coffee',
       'client/splash.css',
       'client/views/splash/splash.jade', 
       'client/views/splash/splash.coffee',
@@ -30,6 +31,7 @@ Package.on_use(function(api) {
     ], 'client');
 
     api.export([
+      'FamRender',
       'SplashView'
     ]);
 
