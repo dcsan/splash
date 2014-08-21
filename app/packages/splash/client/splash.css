@@ -1,0 +1,19 @@
+.splashBox {
+  border: 2px solid red;
+  background-color: white;
+}
+
+.famousBox {
+  position: absolute;
+  margin: 10%;
+  border: 2px solid red;
+}
+
+.splashBox {
+  border: 2px solid red;
+  background-color: white;
+}
+
+.scrollPanel {
+  -webkit-overflow-scrolling: 'touch'
+}

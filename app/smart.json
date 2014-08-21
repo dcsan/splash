@@ -1,0 +1,12 @@
+{
+  "packages": {
+    "iron-router": {
+      "version": "0.8.2"
+    },
+    "famono": {
+      "git": "https://github.com/dcsan/Meteor-famono.git",
+      "branch": "master"
+      },
+    "jade": {}
+  }
+}

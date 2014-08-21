@@ -1,0 +1,12 @@
+template(name='chapterList')
+
+  .menuBar
+    a(href='splash') splash
+
+  h2 chapterList
+
+  div.scrollPanel
+    each chapters
+      p Chapter [#{idx}]
+      h2 #{title}
+      p #{caption}
