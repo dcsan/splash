@@ -22,24 +22,25 @@ Package.on_use(function(api) {
 
     // client
     api.add_files([
+      'client/views/layout/mobile.html',
       'client/lib/SplashView.coffee',
       'client/lib/FamRender.coffee',
       'client/splash.css',
       'client/views/splash/splash.jade', 
       'client/views/splash/splash.coffee',
-      'client/famous.css'
+      // 'client/famous.css'
     ], 'client');
-
-    api.export([
-      'FamRender',
-      'SplashView'
-    ]);
-
 
     // both
     api.add_files([
       'init.coffee',
       'routes.coffee'
+    ]);
+
+    api.export([
+      'FamRender',
+      'SplashView',
+      // 'famo'
     ]);
 
 });

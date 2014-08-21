@@ -1,16 +1,12 @@
 initDone = false
 splash = null
-famr = null
 
 Template.splash.rendered = () ->
-  console.log('splash.rendered')
-  opts = {
-    div: "famDiv"
-  }
-  if initDone
-    splash.show()
-  else
-    famr = new FamRender(opts)
-    splash = new SplashView(famr)
+  console.log('Template.splash.rendered')
+  if !initDone
+    splash = new SplashView(FamRender.one)
     window.g = splash
+    window.fob = FamRender.one
     initDone = true
+  else
+    splash.show()

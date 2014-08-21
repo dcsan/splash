@@ -5,7 +5,9 @@
 
 .famousBox {
   position: absolute;
-  margin: 10%;
+  top: 0px;
+  left: 0px;
+  /*margin: 10%;*/
   border: 2px solid red;
 }
 

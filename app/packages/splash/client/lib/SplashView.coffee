@@ -1,12 +1,36 @@
 class SplashView
   
-  constructor: (@famr) ->
-    console.log('Splash.new')
+  constructor: (@famo) ->
+    console.log('SplashView.new')
+    @root = new famous.core.RenderNode()
+
     if !@initDone
-      @draw()
+      @addBack()
+      # @addSlabs()
+      @addButton()
       @initDone = true
 
-  draw: () ->
+    @show()
+
+  addBack: () ->
+    @bg = new famous.core.Surface({
+      size:[250,250]
+      content: "background"
+      properties: {
+        backgroundColor: "#ccc"
+        zIndex: -20
+      }
+    })
+    mod = new famous.core.Modifier({
+      origin: [0, 0]
+      align: [0, .2]
+    })
+
+    @root.add(mod).add(@bg)
+
+    # @ctx.add(mod).add(@bg)
+
+  addSlabs: () ->
     @surfaces = []
     @counter = 0
 
@@ -14,7 +38,7 @@ class SplashView
       @surfaces.push(
         new famous.core.Surface({
           content: "Surface: " + (i + 1)
-          size: [200, 200]
+          size: [100, 100]
           properties: {
             backgroundColor: "hsl(" + (i * 360 / 10) + ", 100%, 50%)"
             lineHeight: "200px"
@@ -23,39 +47,51 @@ class SplashView
         })
       )
 
-    @famr.renderController.show(@surfaces[0])
+    @famo.renderController.show(@surfaces[0])
 
     famous.core.Engine.on "click", () =>
       console.log("clicked", @counter)
       @next = (@counter++ + 1) % @surfaces.length
-      @famr.renderController.show(@surfaces[@next])
+      @famo.renderController.show(@surfaces[@next])
 
     @mod = new famous.core.Modifier({
-      origin: [.5, .5]
+      origin: [0.5, 0.5]
+      align: [0.5, 0.5]
     })
-      
-    @famr.mainContext.add(@mod).add(@famr.renderController)
 
-    @addButton()
 
   addButton: () ->
     button = new famous.core.Surface({
       content: "chapterList"
-      size: [200,50]
+      size: [100,100]
       properties: {
-        backgroundColor: "#0F0"
+        backgroundColor: "#D44"
+        content: "Button"
+        zIndex: -1
+
       }
+    })
+
+    # Modder = require('famous/modifiers/StateModifier')
+    Modder = famous.core.Modifier
+    mod = new Modder({
+      transform: famous.core.Transform.rotateZ(Math.PI/4)
+      origin: [1, 0.5]
+      align: [0.5, 1]
     })
 
     button.on 'click', =>
       console.log("clicked")
       Router.go("/chapters")
 
-    @famr.mainContext.add(button)
+    # @famo.mainContext.add(mod).add(button)
+    @root.add(mod).add(button)
 
   hide: () ->
-    @famr.renderController.hide()
+    @famo.show(null)
+    # @famo.renderController.hide()
 
   show: () ->
     console.log('splash.show')
-    @famr.renderController.show(@surfaces[@counter])
+    @famo.show(@root)
+    # @famo.renderController.show(@surfaces[@counter])

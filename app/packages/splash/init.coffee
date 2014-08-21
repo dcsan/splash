@@ -1,3 +1,9 @@
 console.log("splash.init")
 
-# Famr = FamRender.new()
+# FamObj = {}
+
+# FamObj.init = () ->
+#   @obj = FamRender.new()
+
+# if Meteor.isClient
+#   FamRender.init()
