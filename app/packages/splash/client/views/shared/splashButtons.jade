@@ -1,0 +1,12 @@
+template(name='splashButtons')
+  .splashButtonBox
+    +getStartedButton
+    a(href='/about')
+      .splashInfoButton#splashInfoButton
+        .verticalAlign {{trans "learn more"}}
+
+
+template(name='getStartedButton')
+  a(href='http://redes.meteor.com')
+    .splashStartButton
+      .verticalAlign {{trans "Get Started!"}}

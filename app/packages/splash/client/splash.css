@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .splashBox {
   border: 2px solid red;
   background-color: white;
@@ -87,11 +91,11 @@
   left: 0px;
   margin: 10%;
   width: 80%;  
-  border: 1px dashed blue;
+  /*border: 1px dashed blue;*/
   z-index: 100;
 }
 
-.splashButtonBox .splashStartButton {
+.splashStartButton {
   position: relative;
   background-color: #2ae600;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
@@ -102,9 +106,10 @@
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 20px;
+
 }
 
-.splashButtonBox .splashInfoButton {
+.splashInfoButton {
   position: relative;
   background-color: #b3b3b3;
   color: white;
@@ -117,17 +122,7 @@
   cursor: pointer;
 }
 
-
-/*.parent-element {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+.centerImage {
+  margin: 15%;
+  width: 70%;
 }
-
-.element {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-*/
-

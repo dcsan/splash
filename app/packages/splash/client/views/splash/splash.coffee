@@ -4,7 +4,7 @@ splash = null
 Template.splash.rendered = () ->
   console.log('Template.splash.rendered')
   if !initDone
-    coverData = CoverData.find() 
+    coverData = CoverData.find()
     splash = new SplashView(FamRender.one, coverData)
     window.g = splash
     window.fob = FamRender.one
@@ -14,6 +14,3 @@ Template.splash.rendered = () ->
 
 Template.splash.panelPageNum = () ->
   return Session.get('panelPageNum')
-
-Template.splash.trans = (msg) ->
-  return(msg)

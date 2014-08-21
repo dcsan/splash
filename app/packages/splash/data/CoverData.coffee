@@ -15,6 +15,7 @@ CoverData.find = () ->
         {text: "Your english adventure"}
         {text: "starts here!"}
       ]
+      long: "A choose your own adventure style game. Listen to the in-game characters and make the right decisions."
       imageClass: "comicPanelImage"
 
     }
@@ -26,6 +27,7 @@ CoverData.find = () ->
         {text: "Keep your mind engaged"}
         {text: "with fun games!"}
       ]
+      long: "We have a series of different games to keep your brain engaged. Everything from vocabulary matching to deeper quizzes and even noughts and crosses!"
       imageClass: null
     }
 

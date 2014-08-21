@@ -1,0 +1,22 @@
+template(name='about')
+  a(href='/splash')
+    img.centerImage(src='/images/ux/logo/logo.png')
+
+  each data
+    .panelTitle #{title.en}
+
+    each captions
+      .comicPanelCaption #{text}
+    img.comicPanelImage(src=image)
+    
+    p #{long}
+    +getStartedButton
+
+    hr
+    br
+
+
+  a(href='/splash')
+    img.centerImage(src='/images/ux/logo/logo.png')
+
+  +getStartedButton

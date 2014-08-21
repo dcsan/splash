@@ -20,3 +20,20 @@ Meteor.startup ->
     
     @route 'settings',
       path: '/steps/1'
+
+    @route 'landing',
+      path: '/landing/:opts?'
+      data: ->
+        console.log("landing:", @params)
+        return {
+          params: @params
+        }
+
+    @route 'about',
+      path: '/about/:opts?'
+      data: ->
+        console.log("landing:", @params)
+        return {
+          params: @params
+          data: CoverData.find()
+        }
