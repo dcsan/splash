@@ -53,10 +53,10 @@ class ComicPanel
   addTitle: (obj) ->
     content = "<span class='panelTitle'>#{obj.title}</span>"
     @title = new famous.core.Surface({
-      size: [undefined, true]
+      size: [undefined, 100]
       content: content
       properties: {
-        zIndex: 20
+        zIndex: 100
       }
     })
     mod = new famous.core.Modifier({
@@ -86,7 +86,7 @@ class ComicPanel
 
   mainImage: (obj) ->
     @image = new famous.surfaces.ImageSurface({
-      size:[400, true]
+      size:[true, 400]
       content: obj.image
       classes: [obj.imageClass]
     })

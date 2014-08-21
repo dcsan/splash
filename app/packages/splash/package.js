@@ -26,6 +26,7 @@ Package.on_use(function(api) {
       'client/lib/ComicPanel.coffee',
       'client/lib/SplashView.coffee',
       'client/lib/FamRender.coffee',
+      'client/lib/SpriteButton.coffee',
       'client/views/layout/mobile.html',
       'client/splash.css',
       'client/views/splash/splash.jade', 
@@ -44,7 +45,8 @@ Package.on_use(function(api) {
       'FamRender',
       'SplashView',
       'ComicPanel',
-      'CoverData'
+      'CoverData',
+      'SpriteButton'
       // 'famo'
     ]);
 

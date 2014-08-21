@@ -3,7 +3,7 @@ class SplashView
   constructor: (@famo, @data) ->
     console.log('SplashView.new')
 
-    # famous bullshit API
+    # famous verbose API
     @root = new famous.core.RenderNode()
     @view = new famous.core.View()
     @viewCrop = new famous.modifiers.StateModifier({
@@ -24,8 +24,15 @@ class SplashView
       @addNavButton(-1, "<")
       @initDone = true
 
-    $("body").css("background-image",
-        "url(/images/ux/patterns/stripes/v-stripe.jpg)")
+    @logoIcon = new SpriteButton({
+      imageUrl: "/images/ux/logo/logo.png"
+      parent: @root
+      origin: [1, 0]
+      align: [1, 0]
+      pos: [0,0,50]
+      size: [200,150]
+      zIndex: 50
+    })
 
     @show()
 
@@ -42,12 +49,12 @@ class SplashView
     if (dir==1) # right
       opts = {
         origin: [ 1, 0.5]
-        align:  [ 1, 0.2]
+        align:  [ 1, 0.5]
       }
     else # left
       opts = {
         origin: [0, 0.5]
-        align:  [0 ,0.2]
+        align:  [0 ,0.5]
       }
 
     mod = new famous.core.Modifier(opts)
@@ -78,10 +85,10 @@ class SplashView
     @pageNum = @getPanelNum()
     console.log("flipPage dir:#{dir} scrollDirection #{@scrollDirection} pageNum: #{@pageNum}")
 
-    if @pageNum >= @panelCount
-      @scrollDirection = -1
-    else if @pageNum <= 0
-      @scrollDirection = 1
+    # if @pageNum >= @panelCount
+    #   @scrollDirection = -1
+    # else if @pageNum <= 0
+    #   @scrollDirection = 1
 
     if !dir
       dir = @scrollDirection
@@ -105,10 +112,7 @@ class SplashView
     @slideshowContainer = new famous.surfaces.ContainerSurface({
       properties: {
         overflow: 'hidden'
-        size: [true, true]
-        properties: {
-          backgroundColor: "#666"
-        }
+        size: [500, 500]  # forced size since "true" is a mess
       }
     })
 
@@ -125,7 +129,7 @@ class SplashView
 
     posmod = new famous.modifiers.StateModifier({
       origin: [0.5, 0.5],
-      align: [0.5, 0.3],
+      align: [0.5, 0.4],
       # transform: famous.core.Transform.translate( 0, 100, 20)
     })
 
@@ -133,6 +137,7 @@ class SplashView
 
     @slideshowContainer.add(@scrollview)
     @root.add(posmod).add(@slideshowContainer)
+    # @root.add(@slideshowContainer)
 
     # @scrollview.on 'pageChange', (e) =>
     #   pageNum = @scrollview._node.index
@@ -140,8 +145,8 @@ class SplashView
     #     @scrollDirection = - @scrollDirection
     #   console.log('pageChange', e, pageNum)
 
-    @slideshowContainer.on 'click', () =>
-      @flipPage()
+    # @slideshowContainer.on 'click', () =>
+    #   @flipPage()
 
     callback = -> @flipPage
     Meteor.setTimeout(callback, 1000)
