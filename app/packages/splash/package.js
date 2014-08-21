@@ -23,9 +23,10 @@ Package.on_use(function(api) {
 
     // client
     api.add_files([
-      'client/views/layout/mobile.html',
+      'client/lib/ComicPanel.coffee',
       'client/lib/SplashView.coffee',
       'client/lib/FamRender.coffee',
+      'client/views/layout/mobile.html',
       'client/splash.css',
       'client/views/splash/splash.jade', 
       'client/views/splash/splash.coffee',
@@ -35,12 +36,15 @@ Package.on_use(function(api) {
     // both
     api.add_files([
       'init.coffee',
-      'routes.coffee'
+      'routes.coffee',
+      'data/CoverData.coffee',
     ]);
 
     api.export([
       'FamRender',
       'SplashView',
+      'ComicPanel',
+      'CoverData'
       // 'famo'
     ]);
 

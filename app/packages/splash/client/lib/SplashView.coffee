@@ -1,14 +1,27 @@
 class SplashView
   
-  constructor: (@famo) ->
+  constructor: (@famo, @data) ->
     console.log('SplashView.new')
+
+    # famous bullshit API
     @root = new famous.core.RenderNode()
+    @view = new famous.core.View()
+    @viewCrop = new famous.modifiers.StateModifier({
+      size: [500, undefined],
+      origin: @center,
+      align: @center
+    })
+    @view = @root.add(@viewCrop)
+
+    @panelCount = 4
 
     if !@initDone
       # @addBack()
       # @addSlabs()
-      @addButton()
-      @addCarousel()
+      @scrollDirection = 1 # initial direction
+      @addCarousel(@data)
+      @addNavButton( 1, ">")
+      @addNavButton(-1, "<")
       @initDone = true
 
     $("body").css("background-image",
@@ -16,79 +29,36 @@ class SplashView
 
     @show()
 
-  addBack: () ->
-    @bg = new famous.core.Surface({
-      size:[250,250]
-      content: "background"
-      properties: {
-        backgroundColor: "#ccc"
-        zIndex: -20
-      }
-    })
-    mod = new famous.core.Modifier({
-      origin: [0, 0]
-      align: [0, .2]
-    })
+  getData: () ->
+    coverData = CoverData.find().fetch()
 
-    @root.add(mod).add(@bg)
-
-    # @ctx.add(mod).add(@bg)
-
-  addSlabs: () ->
-    @surfaces = []
-    @counter = 0
-
-    for i in [1..10]
-      @surfaces.push(
-        new famous.core.Surface({
-          content: "Surface: " + (i + 1)
-          size: [100, 100]
-          properties: {
-            backgroundColor: "hsl(" + (i * 360 / 10) + ", 100%, 50%)"
-            lineHeight: "200px"
-            textAlign: 'center'
-          }
-        })
-      )
-
-    @famo.renderController.show(@surfaces[0])
-
-    famous.core.Engine.on "click", () =>
-      console.log("clicked", @counter)
-      @next = (@counter++ + 1) % @surfaces.length
-      @famo.renderController.show(@surfaces[@next])
-
-    @mod = new famous.core.Modifier({
-      origin: [0.5, 0.5]
-      align: [0.5, 0.5]
-    })
-
-
-  addButton: () ->
+  addNavButton: (dir, label, img) ->
     button = new famous.core.Surface({
-      content: "chapterList"
-      size: [100,100]
-      properties: {
-        backgroundColor: "#cFc"
-        content: "Button"
-        zIndex: 1
+      size: [100,50]
+      classes: ['panelNavButton']
+      content: label
+    })
+
+    if (dir==1) # right
+      opts = {
+        origin: [ 1, 0.5]
+        align:  [ 1, 0.2]
       }
-    })
+    else # left
+      opts = {
+        origin: [0, 0.5]
+        align:  [0 ,0.2]
+      }
 
-    # Modder = require('famous/modifiers/StateModifier')
-    Modder = famous.core.Modifier
-    mod = new Modder({
-      origin: [0, 0.5]
-      align: [0, .25]
-      transform: famous.core.Transform.translate( 0, 50, 20)
-    })
-
-    button.on 'click', =>
-      console.log("clicked")
-      Router.go("/chapters")
+    mod = new famous.core.Modifier(opts)
 
     # @famo.mainContext.add(mod).add(button)
-    @root.add(mod).add(button)
+    @view.add(mod).add(button)
+    button.on 'click', =>
+      console.group("clicked", dir)
+      @flipPage(dir)
+      console.groupEnd()
+      # Router.go("/chapters")
 
   hide: () ->
     @famo.show(null)
@@ -97,63 +67,87 @@ class SplashView
   show: () ->
     console.log('splash.show')
     @famo.show(@root)
-    # @famo.renderController.show(@surfaces[@counter])
+    # @famo.renderController.show(@panels[@counter])
 
-  page:() ->
-    console.log("page", @scrollview.currentPosition)
-    @scrollview.goToNextPage()
+  getPanelNum:()->
+    idx = @scrollview._node.index   #FIXME - may change?
+    Session.set('panelPageNum', idx)
+    return idx
+
+  flipPage:(dir=null) ->
+    @pageNum = @getPanelNum()
+    console.log("flipPage dir:#{dir} scrollDirection #{@scrollDirection} pageNum: #{@pageNum}")
+
+    if @pageNum >= @panelCount
+      @scrollDirection = -1
+    else if @pageNum <= 0
+      @scrollDirection = 1
+
+    if !dir
+      dir = @scrollDirection
+
+    if dir == 1
+      @scrollview.goToNextPage()
+    else
+      @scrollview.goToPreviousPage()
+
     # setTimeout () =>
-    #   @page
+    #   @flipPage
     # , 500
 
-  addCarousel: () ->
+  addCarousel: (data) ->
     @scrollview = new famous.views.Scrollview({
       direction: 0
+      paginated: true
     })
-    @surfaces = []
 
-    @scrollview.sequenceFrom(@surfaces)
-
+    # overflow crop it
     @slideshowContainer = new famous.surfaces.ContainerSurface({
       properties: {
         overflow: 'hidden'
-        boxShadow: "5px 5px 10px"
-        size: [250, 250]
+        size: [true, true]
+        properties: {
+          backgroundColor: "#666"
+        }
       }
     })
 
-    for i in [1..20]
-      temp = new famous.core.Surface({
-        content: "Surface: #{i}"
-        size: [300, 200],
-        properties: {
-          backgroundColor: "hsl(" + (i * 360 / 40) + ", 100%, 50%)",
-          lineHeight: "200px",
-          textAlign: "center"
-        }
-      })
+    @panels = []
 
-      posmod = new famous.modifiers.StateModifier({
-        origin: [0.5, 0],
-        align: [0.5, 0],
-        transform: famous.core.Transform.translate( 0, 100, 20)
-      })
+    # for i in [0..10]
+    for obj, idx in data
+      console.log('data', obj)
+      panel = new ComicPanel(obj, idx)
+      panel.image.pipe(@scrollview)
+      @panels.push(panel.view)
 
-      temp.pipe(@scrollview)
-      @surfaces.push(temp)
+    # debugger;
+
+    posmod = new famous.modifiers.StateModifier({
+      origin: [0.5, 0.5],
+      align: [0.5, 0.3],
+      # transform: famous.core.Transform.translate( 0, 100, 20)
+    })
+
+    @scrollview.sequenceFrom(@panels)
 
     @slideshowContainer.add(@scrollview)
     @root.add(posmod).add(@slideshowContainer)
 
-    @slideshowContainer.on 'click', () =>
-      console.log('scrollClick')
-      @page()
+    # @scrollview.on 'pageChange', (e) =>
+    #   pageNum = @scrollview._node.index
+    #   if (pageNum >= @panelCount)
+    #     @scrollDirection = - @scrollDirection
+    #   console.log('pageChange', e, pageNum)
 
-    callback = -> @page
+    @slideshowContainer.on 'click', () =>
+      @flipPage()
+
+    callback = -> @flipPage
     Meteor.setTimeout(callback, 1000)
     
     # that = @
     # setTimeout =>
-    #   @page
+    #   @flipPage
     # , 500
 

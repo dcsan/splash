@@ -19,3 +19,96 @@
 .scrollPanel {
   -webkit-overflow-scrolling: 'touch'
 }
+
+.panelTitle {
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  background-color: black;
+  z-index: 30;
+}
+
+.comicPanelCaption {
+  z-index: 20;
+  color: white;
+  background-color: black;
+  font-size: 30px;
+  padding: 5px;
+  border-radius: 1px;
+  line-height: 45px;
+  padding: 10px;
+}
+
+.comicPanelBack {
+  border: 1px dotted black;
+}
+
+.comicPanelImage {
+  z-index: 10;
+  border: 5px solid black;
+  border-radius: 1px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.panelNavButton {
+  z-index: 50;
+  color: white;
+  background-color: red;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.panelPageNum {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 24px;
+  color: white;
+  background-color: black;
+  z-index: 50;
+  padding: 10px;
+}
+
+.verticalAlign {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+.splashStartButton {
+  position: absolute;
+  top: 70%;
+  left: 0px;
+  margin: 10%;
+  width: 80%;
+  background-color: #2ae600;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 40px;
+  height: 60px;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+/*.parent-element {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.element {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+*/
+
