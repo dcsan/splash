@@ -83,7 +83,9 @@ class SplashView
 
   flipPage:(dir=null) ->
     @pageNum = @getPanelNum()
-    console.log("flipPage dir:#{dir} scrollDirection #{@scrollDirection} pageNum: #{@pageNum}")
+    console.log("flipPage dir:#{dir} 
+      scrollDirection #{@scrollDirection} 
+      pageNum: #{@pageNum}")
 
     # if @pageNum >= @panelCount
     #   @scrollDirection = -1
@@ -139,8 +141,10 @@ class SplashView
     @root.add(posmod).add(@slideshowContainer)
     # @root.add(@slideshowContainer)
 
-    # @scrollview.on 'pageChange', (e) =>
-    #   pageNum = @scrollview._node.index
+    @scrollview.on 'pageChange', (e) =>
+      p = @getPanelNum()
+      console.log('pageChange', p, e)
+
     #   if (pageNum >= @panelCount)
     #     @scrollDirection = - @scrollDirection
     #   console.log('pageChange', e, pageNum)
