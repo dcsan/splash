@@ -1,7 +1,7 @@
 {
 	"famous": {
-    "git": "/Users/dc/dev/ref/famous-dc/",
-		"branch": "scview"
+    "git": "git@github.com:dcsan/famous.git",
+		"branch": "sc5"
 	},
 	"famous.polyfills": {
 		"git": "https://github.com/Famous/polyfills.git"
