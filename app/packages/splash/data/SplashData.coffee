@@ -35,9 +35,11 @@ CoverData.find = () ->
       image: '/splash/panels/lesson.png'
       title: 'Grammar Lessons'
       captions: [
+        {text: "Explained with gusto!"}
         {text: "Learn from our experts"}
       ]
       imageClass: "comicPanelImage"
+      long: "all the details explained"
     }
 
     {
@@ -45,7 +47,9 @@ CoverData.find = () ->
       title: 'Discussion'
       captions: [
         {text: "Learn from our other students"}
+        {text: "studying with the buddy system!"}
       ]
+      long: "make friends from all over the world and improve your studying power!"
       imageClass: "comicPanelImage"
     }
 

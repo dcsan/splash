@@ -7,6 +7,15 @@ class SplashView
     @root = new famous.core.RenderNode()
     @view = new famous.core.View()
 
+    Easing = famous.transitions.Easing
+
+    @opts = {
+      inTransform: famous.core.Transform.translate(300, 0, 0),
+      outTransform: famous.core.Transform.translate(-500, 0, 0),
+      inTransition: { duration: 500, curve: Easing.outBack },
+      outTransition: { duration: 350, curve: Easing.inQuad }
+    }
+
     # prevent outside from messing with scrollH
     @viewCrop = new famous.modifiers.StateModifier({
       size: [undefined, undefined],
@@ -89,7 +98,8 @@ class SplashView
     # @famo.renderController.show(@panels[@counter])
 
   getPanelNum: ()->
-    idx = @scrollview._node.index   #FIXME - may change?
+    # idx = @scrollview._node.index   #FIXME - may change?
+    idx = @scrollview.getCurrentIndex()
     Session.set('panelPageNum', idx)
     return idx
 
@@ -139,7 +149,7 @@ class SplashView
     # for i in [0..10]
     for obj, idx in data
       @log('data', obj)
-      panel = new ComicPanel(obj, idx)
+      panel = new SplashPanel(obj, idx)
       panel.image.pipe(@scrollview)
       @panels.push(panel.view)
 

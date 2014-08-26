@@ -3,19 +3,21 @@
   {{>logoButton}}
 
   {{#each data}}
+  <div class="aboutItemBox">
     <div class="panelTitle">
-      {{title.en}}
+      {{title}}
     </div>
 
-    {{#each captions}}
-      <div class="comicPanelCaption">{{text}}</div>
-    {{/each}}
+    <div class="aboutCaptionBox">
+      {{#each captions}}
+        <span class="splashPanelCaption">{{text}}</span><br/>
+      {{/each}}
+    </div>
 
-    <img src="{{image}}" class="comicPanelImage"/>
-    <p>{{long}}</p>
-    {{>getStartedButton}}
-    <hr/>
-    <br/>
+    <img src="{{image}}" class="splashPanelImage centerImage"/>
+    <div class="aboutLong">{{long}}</div>
+  </div>
+  {{>getStartedButton}}
 
   {{/each}}
 

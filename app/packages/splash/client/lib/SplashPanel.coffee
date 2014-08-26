@@ -1,15 +1,20 @@
-class ComicPanel
+class SplashPanel
   
   constructor: (@data, @idx) ->
     console.log('PanelSurface.new')
     @center = [0.5, 0.5]
-    @root = new famous.core.View()
+    @root = new famous.core.View(
+      size: [500, 400]
+    )
 
     @viewCrop = new famous.modifiers.StateModifier({
-      size: [500, 500],
+      size: [500, 400],
       origin: @center,
       align: @center,
       overflow: 'hidden'
+      # properties: {
+      #   border: "2px solid red"
+      # }
     })
 
     @view = @root.add(@viewCrop)
@@ -20,9 +25,9 @@ class ComicPanel
 
   addBack: () ->
     @bg = new famous.core.Surface({
-      size:[500,500]
-      content: "panel"
-      classes: ["comicPanelBack"]
+      size:[500,400]
+      # content: "panel"
+      classes: ["splashPanelBack"]    # "debug"
     })
     mod = new famous.core.Modifier({
       origin: [0.5, 0.5]
@@ -50,7 +55,7 @@ class ComicPanel
     content = ""
     ## line breaks after spans
     for cap in captions
-      content += "<span class='comicPanelCaption'>#{cap.text}</span><br/>"
+      content += "<span class='splashPanelCaption'>#{cap.text}</span><br/>"
     @caption = new famous.core.Surface({
       size: [450, true]
       content: content
@@ -68,7 +73,7 @@ class ComicPanel
     @image = new famous.surfaces.ImageSurface({
       size:[400, true]
       content: obj.image
-      classes: ["comicPanelImage"]
+      classes: ["splashPanelImage"]
     })
     mod = new famous.core.Modifier({
       origin: [0.5, 0.5]

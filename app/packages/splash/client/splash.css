@@ -2,6 +2,11 @@ a {
   text-decoration: none;
 }
 
+.debug {
+  border: 2px solid red;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
 .splashBox {
   border: 2px solid red;
   background-color: white;
@@ -24,6 +29,26 @@ a {
   -webkit-overflow-scrolling: 'touch'
 }
 
+
+.splashPanelBack {
+  /*border: 1px dotted black;*/
+}
+
+.splashPanelImage {
+  z-index: 10;
+  /*border: 5px solid black;*/
+  /*border-radius: 1px;*/
+  /*box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);*/
+}
+
+.aboutItemBox {
+  position: relative;
+/*  
+  background-color: white;
+  border: 1px solid black; 
+*/
+}
+
 .panelTitle {
   font-family: 'Mouse Memoirs', sans-serif;
   font-size: 60px;
@@ -34,28 +59,34 @@ a {
   z-index: 30;
 }
 
-.comicPanelCaption {
+.aboutCaptionBox {
+  position: absolute;
+  top: 80px;
+  margin: 2%;
+}
+
+.splashPanelCaption {
   z-index: 20;
-  color: white;
-  background-color: black;
-  font-size: 30px;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  margin-bottom: 5px;
   padding: 5px;
   border-radius: 1px;
   line-height: 45px;
   padding: 10px;
+  border: solid black;
+  border-width: 1px 4px 4px 1px;
 }
 
-.comicPanelBack {
-  /*border: 1px dotted black;*/
+.aboutLong {
+  border: 1px solid black;
+  background-color: #fffaad;
+  padding: 10px;
+  position: absolute;
+  bottom: 0px;
+  margin: 5%;
 }
-
-.comicPanelImage {
-  z-index: 10;
-  border: 5px solid black;
-  border-radius: 1px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-}
-
 
 .panelNavButton {
   z-index: 50;
@@ -134,8 +165,13 @@ a {
   cursor: pointer;
 }
 
+.splashPanelLong {
+
+}
+
 .centerImage {
-  margin: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
   width: 70%;
 }
 

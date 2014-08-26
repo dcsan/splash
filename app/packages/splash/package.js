@@ -34,7 +34,7 @@ Package.on_use(function(api) {
       'client/views/landing/landing.html',
 
       'client/lib/ui-helpers.coffee',
-      'client/lib/ComicPanel.coffee',
+      'client/lib/SplashPanel.coffee',
       'client/lib/SplashView.coffee',
       'client/lib/FamRender.coffee',
       'client/lib/SpriteButton.coffee',
@@ -51,13 +51,13 @@ Package.on_use(function(api) {
     api.add_files([
       'init.coffee',
       'routes.coffee',
-      'data/CoverData.coffee',
+      'data/SplashData.coffee',
     ]);
 
     api.export([
       'FamRender',
       'SplashView',
-      'ComicPanel',
+      'SplashPanel',
       'CoverData',
       'SpriteButton'
       // 'famo'
