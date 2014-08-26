@@ -28,7 +28,6 @@ Package.on_use(function(api) {
       'client/lib/SplashView.coffee',
       'client/lib/FamRender.coffee',
       'client/lib/SpriteButton.coffee',
-      'client/views/shared/mobile.html',
       'client/views/shared/splashButtons.jade',
       'client/splash.css',
       'client/views/splash/splash.jade', 
@@ -37,6 +36,7 @@ Package.on_use(function(api) {
       'client/views/landing/landing.coffee',
       'client/views/about/about.jade',
       'client/views/about/about.coffee',
+      // 'client/views/shared/mobile.html',
       // 'client/famous.css'
     ], 'client');
 

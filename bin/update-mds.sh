@@ -1,0 +1,1 @@
+cd ../langdb.wiki && git pull

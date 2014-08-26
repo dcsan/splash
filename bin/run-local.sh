@@ -1,2 +1,3 @@
-cd app
-mrt
+# --settings private/config/local.json
+cd app && meteor run 
+
