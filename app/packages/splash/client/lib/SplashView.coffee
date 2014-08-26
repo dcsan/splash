@@ -1,11 +1,13 @@
 class SplashView
   
   constructor: (@famo, @data) ->
-    console.log('SplashView.new')
+    @log('SplashView.new')
 
     # famous verbose API
     @root = new famous.core.RenderNode()
     @view = new famous.core.View()
+
+    # prevent outside from messing with scrollH
     @viewCrop = new famous.modifiers.StateModifier({
       size: [500, undefined],
       origin: @center,
@@ -21,8 +23,8 @@ class SplashView
       # @addSlabs()
       @scrollDirection = 1 # initial direction
       @addCarousel(@data)
-      @addNavButton( 1, ">")
-      @addNavButton(-1, "<")
+      @addNavButton( 1, "/images/ux/icons/128/arrow-right.png")
+      @addNavButton(-1, "/images/ux/icons/128/arrow-left.png")
       @initDone = true
 
     @addLogo()
@@ -42,11 +44,14 @@ class SplashView
   # getData: () ->
   #   coverData = CoverData.find().fetch()
 
-  addNavButton: (dir, label, img) ->
-    button = new famous.core.Surface({
-      size: [100,50]
+  addNavButton: (dir, imgSrc) ->
+    button = new famous.surfaces.ImageSurface({
+      size: [64, 64]
       classes: ['panelNavButton']
-      content: label
+      content: imgSrc
+      properties: {
+        # borderRadius: "50%"
+      }
     })
 
     if (dir==1) # right
@@ -70,37 +75,45 @@ class SplashView
       console.groupEnd()
       # Router.go("/chapters")
 
+  # enable logging toggle
+  log: (a,b) ->
+    console.log(a, b)
+
   hide: () ->
     @famo.show(null)
     # @famo.renderController.hide()
 
   show: () ->
-    console.log('splash.show')
+    @log('splash.show')
     @famo.show(@root)
     # @famo.renderController.show(@panels[@counter])
 
-  getPanelNum:()->
+  getPanelNum: ()->
     idx = @scrollview._node.index   #FIXME - may change?
     Session.set('panelPageNum', idx)
     return idx
 
-  flipPage:(dir=null) ->
+  flipPage: (dir=null) ->
     @pageNum = @getPanelNum()
-    console.log("flipPage dir:#{dir}
+    @log("flipPage dir:#{dir}
       scrollDirection #{@scrollDirection}
       pageNum: #{@pageNum}")
 
-    if @pageNum >= @panelCount
+    if @pageNum >= (@panelCount-1)   # zero indexed
       @scrollDirection = -1
+      @log("flipDir max", @scrollDirection)
     else if @pageNum <= 0
       @scrollDirection = 1
+      @log("flipDir min", @scrollDirection)
 
-    if !dir
+    if dir==null or dir=="auto"
       dir = @scrollDirection
+      @log("autodir", dir)
 
     if dir == 1
       @scrollview.goToNextPage()
     else
+      # debugger
       @scrollview.goToPreviousPage()
 
     # setTimeout () =>
@@ -125,7 +138,7 @@ class SplashView
 
     # for i in [0..10]
     for obj, idx in data
-      console.log('data', obj)
+      @log('data', obj)
       panel = new ComicPanel(obj, idx)
       panel.image.pipe(@scrollview)
       @panels.push(panel.view)
@@ -146,13 +159,13 @@ class SplashView
 
     @scrollview.on 'pageChange', (e) =>
       p = @getPanelNum()
-      console.log('pageChange', p, e)
+      @log('pageChange', p, e)
 
-    @slideshowContainer.on 'click', () =>
-      @flipPage()
+    that = this
+    @slideshowContainer.on 'click', () ->
+      that.flipPage("auto")
 
-    callback = -> @flipPage
-    Meteor.setTimeout(callback, 1000)
+    Meteor.setTimeout (=> @flipPage), 1000
     
     # that = @
     # setTimeout =>

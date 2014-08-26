@@ -64,6 +64,16 @@ a {
   color: white;
   font-size: 40px;
   cursor: pointer;
+  border: 1px solid red;
+}
+
+.panelNavButton:hover {
+  border: 1px solid green;
+  box-shadow: 3px 3px 3px rgba(0,0,0, 0.5);
+}
+
+.panelNavButton:active {
+  border: 1px solid red;
 }
 
 .panelPageNum {
@@ -126,3 +136,4 @@ a {
   margin: 15%;
   width: 70%;
 }
+
