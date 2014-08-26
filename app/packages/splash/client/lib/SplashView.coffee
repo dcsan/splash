@@ -10,10 +10,11 @@ class SplashView
       size: [500, undefined],
       origin: @center,
       align: @center
+      overflow: 'hidden'
     })
     @view = @root.add(@viewCrop)
 
-    @panelCount = 4
+    @panelCount = @data.length
 
     if !@initDone
       # @addBack()
@@ -24,6 +25,10 @@ class SplashView
       @addNavButton(-1, "<")
       @initDone = true
 
+    @addLogo()
+    @show()
+
+  addLogo: () ->
     @logoIcon = new SpriteButton({
       imageUrl: "/images/ux/logo/logo.png"
       parent: @root
@@ -34,10 +39,8 @@ class SplashView
       zIndex: 50
     })
 
-    @show()
-
-  getData: () ->
-    coverData = CoverData.find().fetch()
+  # getData: () ->
+  #   coverData = CoverData.find().fetch()
 
   addNavButton: (dir, label, img) ->
     button = new famous.core.Surface({
@@ -83,14 +86,14 @@ class SplashView
 
   flipPage:(dir=null) ->
     @pageNum = @getPanelNum()
-    console.log("flipPage dir:#{dir} 
-      scrollDirection #{@scrollDirection} 
+    console.log("flipPage dir:#{dir}
+      scrollDirection #{@scrollDirection}
       pageNum: #{@pageNum}")
 
-    # if @pageNum >= @panelCount
-    #   @scrollDirection = -1
-    # else if @pageNum <= 0
-    #   @scrollDirection = 1
+    if @pageNum >= @panelCount
+      @scrollDirection = -1
+    else if @pageNum <= 0
+      @scrollDirection = 1
 
     if !dir
       dir = @scrollDirection
@@ -145,12 +148,8 @@ class SplashView
       p = @getPanelNum()
       console.log('pageChange', p, e)
 
-    #   if (pageNum >= @panelCount)
-    #     @scrollDirection = - @scrollDirection
-    #   console.log('pageChange', e, pageNum)
-
-    # @slideshowContainer.on 'click', () =>
-    #   @flipPage()
+    @slideshowContainer.on 'click', () =>
+      @flipPage()
 
     callback = -> @flipPage
     Meteor.setTimeout(callback, 1000)
