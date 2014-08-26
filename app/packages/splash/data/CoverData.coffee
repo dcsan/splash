@@ -9,7 +9,7 @@ CoverData.find = () ->
   panels = [
 
     {
-      image: '/splash/covers/cover-350.jpg'
+      image: '/splash/panels/comic.png'
       title: 'Comic Adventure'
       captions: [
         {text: "Your english adventure"}
@@ -21,7 +21,7 @@ CoverData.find = () ->
     }
 
     {
-      image: '/splash/mocks/syns-thumb-350.png'
+      image: '/splash/panels/game.png'
       title: 'Lots of Games'
       captions: [
         {text: "Keep your mind engaged"}
@@ -32,7 +32,7 @@ CoverData.find = () ->
     }
 
     {
-      image: '/splash/mocks/lesson.png'
+      image: '/splash/panels/lesson.png'
       title: 'Grammar Lessons'
       captions: [
         {text: "Learn from our experts"}
@@ -41,7 +41,7 @@ CoverData.find = () ->
     }
 
     {
-      image: '/splash/mocks/discuss.png'
+      image: '/splash/panels/discuss.png'
       title: 'Discussion'
       captions: [
         {text: "Learn from our other students"}

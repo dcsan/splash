@@ -20,7 +20,7 @@ class ComicPanel
 
   addBack: () ->
     @bg = new famous.core.Surface({
-      size:[450,450]
+      size:[500,500]
       content: "panel"
       classes: ["comicPanelBack"]
     })
@@ -66,9 +66,9 @@ class ComicPanel
 
   mainImage: (obj) ->
     @image = new famous.surfaces.ImageSurface({
-      size:[true, 400]
+      size:[400, true]
       content: obj.image
-      classes: [obj.imageClass]
+      classes: ["comicPanelImage"]
     })
     mod = new famous.core.Modifier({
       origin: [0.5, 0.5]
