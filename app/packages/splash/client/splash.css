@@ -64,16 +64,18 @@ a {
   color: white;
   font-size: 40px;
   cursor: pointer;
-  border: 1px solid red;
+  border: 2px solid white;
 }
 
 .panelNavButton:hover {
-  border: 1px solid green;
+  border: 2px solid green;
   box-shadow: 3px 3px 3px rgba(0,0,0, 0.5);
+  -webkit-transform: scale(1.05, 1.05);
 }
 
 .panelNavButton:active {
-  border: 1px solid red;
+  border: 2px solid red;
+  -webkit-transform: scale(0.9, 0.9);
 }
 
 .panelPageNum {
