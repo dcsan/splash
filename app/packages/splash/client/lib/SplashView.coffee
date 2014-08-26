@@ -9,7 +9,7 @@ class SplashView
 
     # prevent outside from messing with scrollH
     @viewCrop = new famous.modifiers.StateModifier({
-      size: [500, undefined],
+      size: [undefined, undefined],
       origin: @center,
       align: @center
       overflow: 'hidden'
