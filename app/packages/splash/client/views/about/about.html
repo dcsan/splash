@@ -1,0 +1,30 @@
+<template name="about">
+
+  {{>logoButton}}
+
+  {{#each data}}
+    <div class="panelTitle">
+      {{title.en}}
+    </div>
+
+    {{#each captions}}
+      <div class="comicPanelCaption">{{text}}</div>
+    {{/each}}
+
+    <img src="{{image}}" class="comicPanelImage"/>
+    <p>{{long}}</p>
+    {{>getStartedButton}}
+    <hr/>
+    <br/>
+
+  {{/each}}
+
+  {{>logoButton}}
+
+</template>
+
+<template name="logoButton">
+  <a href="/splash">
+    <img src="/images/ux/logo/logo.png" class="centerImage">
+  </a>
+</template>

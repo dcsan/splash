@@ -1,0 +1,22 @@
+<template name="splashButtons">
+  <div class="splashButtonBox">
+    {{>getStartedButton}}
+    <a href="/about">
+      <div class="splashInfoButton" id="splashInfoButton">
+        <div class="verticalAlign">
+        {{trans "learnMore"}}
+        </div>
+      </div>
+    </a>
+  </div>
+</template>
+
+<template name='getStartedButton'>
+  <a href="http://redes.meteor.com">
+      <div class="splashStartButton" id="splashStartButton">
+        <div class="verticalAlign">
+        {{trans "Get Started"}}
+        </div>
+      </div>    
+  </a>
+</template>

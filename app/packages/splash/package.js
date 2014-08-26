@@ -13,7 +13,7 @@ Package.on_use(function(api) {
       'ui',
       'coffeescript',
       'underscore',
-      'jade',
+      // 'jade',
     ]);
 
     // server
@@ -23,18 +23,25 @@ Package.on_use(function(api) {
 
     // client
     api.add_files([
+
+      // 'client/views/shared/splashButtons.jade',
+      // 'client/views/splash/splash.jade', 
+      // 'client/views/about/about.jade',
+      // 'client/views/landing/landing.jade',
+      'client/views/shared/splashButtons.html',
+      'client/views/splash/splash.html', 
+      'client/views/about/about.html',
+      'client/views/landing/landing.html',
+
       'client/lib/ui-helpers.coffee',
       'client/lib/ComicPanel.coffee',
       'client/lib/SplashView.coffee',
       'client/lib/FamRender.coffee',
       'client/lib/SpriteButton.coffee',
-      'client/views/shared/splashButtons.jade',
+      
       'client/splash.css',
-      'client/views/splash/splash.jade', 
       'client/views/splash/splash.coffee',
-      'client/views/landing/landing.jade',
       'client/views/landing/landing.coffee',
-      'client/views/about/about.jade',
       'client/views/about/about.coffee',
       // 'client/views/shared/mobile.html',
       // 'client/famous.css'

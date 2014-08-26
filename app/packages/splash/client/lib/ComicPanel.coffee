@@ -29,8 +29,6 @@ class ComicPanel
       align: [0.5, 0.5]
     })
     @view.add(mod).add(@bg)
-    # @root.add(mod).add(@bg)
-    # @root.add(mod).add(@bg)
 
   addTitle: (obj) ->
     content = "<span class='panelTitle'>#{obj.title}</span>"
