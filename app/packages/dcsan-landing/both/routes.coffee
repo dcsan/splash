@@ -3,7 +3,7 @@ Meteor.startup ->
 
     Router.map ->
 
-      @route '/landing',
+      @route '/',
         
         data: ->
           return {
