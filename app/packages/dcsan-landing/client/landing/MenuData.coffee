@@ -1,6 +1,8 @@
+startUrl = "http://xgram.org/home"
+
 MenuData =
 
-  startUrl: "http://xgram.org/home"
+  startUrl: startUrl
   top:
     cname: "topMenu"
     cta1:
@@ -17,40 +19,40 @@ MenuData =
     {
       img: "/splash/300/blackboard.jpg"
       tag: "map"
-      url: '/lessons'
+      url: startUrl
+      style: "background-color: #95D8E9;"
       title:
         en: "Study"
         ja: "勉強"
       info:
         en: "Lessons and games help you to learn quickly!"
         ja: "楽しいレッスンで、言語の要点を教えます"
-      style: "background-color: #95D8E9;"
     }
 
     {
       img: "/splash/300/mapx.jpg"
       tag: "map"
-      url: '/mapx/tutorial?step=1'
+      url: startUrl
+      style: "background-color: #9dbae9;"
       title:
         en: "Play"
         ja: "遊ぶ"
       info:
         en: "Lots of different mini-games to practice what you learned!"
         ja: "楽しいミニゲーム盛りだくさん！勉強したことを練習し放題！"
-      style: "background-color: #9dbae9;"
     }
 
     {
       img: "/splash/300/lesson-list.jpg"
       tag: "map"
-      url: '/mapx/tutorial?step=1'
+      url: startUrl
+      style: "background-color: #e59be9;"
       title:
         en: "Discuss"
         ja: "調べる"
       info:
         en: "discuss language points with our huge community of fellow learners"
         ja: "文法ポイントを相談できる掲示板とデーターベースがある"
-      style: "background-color: #e59be9;"
     }
 
   ]
