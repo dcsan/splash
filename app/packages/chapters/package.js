@@ -1,5 +1,6 @@
 Package.describe({
-    summary: 'splash page with LPO'
+    summary: 'splash page with LPO',
+    name: 'dcsan:chapters'
 });
 
 Package.on_use(function(api) {
@@ -12,7 +13,8 @@ Package.on_use(function(api) {
       'ui',
       'coffeescript',
       'underscore',
-      'jade',
+      'stylus',
+      'mquandalle:jade',
     ]);
 
     // server

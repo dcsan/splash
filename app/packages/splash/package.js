@@ -1,19 +1,21 @@
 Package.describe({
-    summary: 'splash page with LPO'
+    summary: 'splash page with LPO',
+    name: 'dcsan:splash'
 });
 
 Package.on_use(function(api) {
 
-    console.log('splash.on_use')
+    api.versionsFrom('METEOR@1.0');
+    console.log('splash.on_use');
 
     api.use([
-      'famono',
-      'iron-router', 
       'templating',
       'ui',
       'coffeescript',
       'underscore',
-      'jade',
+      'iron:router', 
+      'mquandalle:jade',
+      'raix:famono@0.8.0'
     ]);
 
     // server

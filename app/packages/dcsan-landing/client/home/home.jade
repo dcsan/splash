@@ -1,0 +1,58 @@
+template(name='home')
+  +StatusBar(text1="home")
+
+  .fixedImageBox(style="background-image: url(/splash/main/bgAbby.jpg);height: 500px")
+  .sideOrange
+  +topLogo
+
+  .homePage
+
+    br
+    br
+    br
+
+    .contentBlock
+      h2 Welcome!
+      p XGram is the most fun and effective way to study a language!
+      p Choose your
+        +midButton(href="/settings/lang" text="language")
+
+      p Run through the
+        +midButton(href="/scenes/intro/start" text="Tutorial")
+
+    .contentBlock
+      h2 Lessons
+      p We're working on adventure game-like lessons. We'll be adding more content soon but please try out these sample lessons:
+      br
+
+      each sampleLessons
+        +midButton(href=href text=text)
+
+      +nextButton(href="/lessons" text="all lessons")
+
+    .contentBlock
+      h2 Topics
+      p We have a huge database of grammar topics that are analysed and discussed here:
+      +nextButton(href="/topics" text="all topics")#topics
+
+    .contentBlock
+      h2 My Deck
+      p collect and review flash cards
+      +nextButton(href="/deck" text="my deck" id="myDeck")
+
+    .contentBlock
+      h2 Random Cool Stuff!
+      p There's lots in development that doesn't fit into the navigation yet.
+        | Please check out some of these pieces below, and give us your feedback :)
+
+    .contentBlock
+      h2 Feedback!
+      p We really appreciate getting your comments on what to change or how to improve!
+      +nextButton(href="" text="send feedback" id="feedback")
+
+    br
+    br
+    br
+    br
+
+

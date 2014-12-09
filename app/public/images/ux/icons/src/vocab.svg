@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>vocab</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="5" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="vocab" sketch:type="MSArtboardGroup">
+            <polygon id="Star-1" stroke="#000000" stroke-width="10" fill="#CA9853" filter="url(#filter-1)" sketch:type="MSShapeGroup" points="129 216.946597 108.787553 234.127041 96.1462999 210.805176 71.0924621 219.523885 67.729674 193.210346 41.218105 192.28981 47.5879451 166.538386 23.1991793 156.102929 38.4413654 134.391493 19.4692406 115.85048 41.5252311 101.111282 30.532038 76.9687809 56.423049 71.1924307 54.8934792 44.7090191 81.1227864 48.675645 89.2634167 23.4280548 112.288607 36.6019419 129 16 145.711393 36.6019419 168.736583 23.4280548 176.877214 48.675645 203.106521 44.7090191 201.576951 71.1924307 227.467962 76.9687809 216.474769 101.111282 238.530759 115.85048 219.558635 134.391493 234.800821 156.102929 210.412055 166.538386 216.781895 192.28981 190.270326 193.210346 186.907538 219.523885 161.8537 210.805176 149.212447 234.127041 "></polygon>
+            <text id="Vocab" sketch:type="MSTextLayer" font-family="Oswald Stencil" font-size="50" font-weight="bold" sketch:alignment="middle" line-spacing="61" fill="#FFFFFF">
+                <tspan x="53.7080078" y="140.552734">Vocab</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

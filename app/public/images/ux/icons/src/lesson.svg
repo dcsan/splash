@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>lesson</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="5" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="lesson" sketch:type="MSArtboardGroup">
+            <polygon id="Star-11" stroke="#000000" stroke-width="10" fill="#F6E023" filter="url(#filter-1)" sketch:type="MSShapeGroup" points="121.5 220.826359 96.6889159 236.204462 81.0072103 211.584144 51.9808871 214.67421 48.5345143 185.688033 21.0419712 175.878037 30.5135275 148.267069 10 127.5 30.5135275 106.732931 21.0419712 79.1219631 48.5345143 69.3119668 51.9808871 40.3257897 81.0072103 43.4158558 96.6889159 18.7955378 121.5 34.1736408 146.311084 18.7955378 161.99279 43.4158558 191.019113 40.3257897 194.465486 69.3119668 221.958029 79.1219631 212.486472 106.732931 233 127.5 212.486472 148.267069 221.958029 175.878037 194.465486 185.688033 191.019113 214.67421 161.99279 211.584144 146.311084 236.204462 "></polygon>
+            <text id="next" sketch:type="MSTextLayer" font-family="Oswald Stencil" font-size="51" font-weight="bold" sketch:alignment="middle" line-spacing="61" fill="#000000">
+                <tspan x="37.3137207" y="149.485352">LESSON</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

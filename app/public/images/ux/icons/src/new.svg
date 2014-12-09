@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>new</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="10" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.342470562 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.949032738   0 0 0 0 0.908534833   0 0 0 0 0.908534833  0 0 0 0.35 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="new" sketch:type="MSArtboardGroup">
+            <polygon id="Star-1" stroke="#000000" stroke-width="10" fill="#F3F40E" filter="url(#filter-1)" sketch:type="MSShapeGroup" points="126.5 206.446597 106.287553 223.627041 93.6462999 200.305176 68.5924621 209.023885 65.229674 182.710346 38.718105 181.78981 45.0879451 156.038386 20.6991793 145.602929 35.9413654 123.891493 16.9692406 105.35048 39.0252311 90.6112824 28.032038 66.4687809 53.923049 60.6924307 52.3934792 34.2090191 78.6227864 38.175645 86.7634167 12.9280548 109.788607 26.1019419 126.5 5.5 143.211393 26.1019419 166.236583 12.9280548 174.377214 38.175645 200.606521 34.2090191 199.076951 60.6924307 224.967962 66.4687809 213.974769 90.6112824 236.030759 105.35048 217.058635 123.891493 232.300821 145.602929 207.912055 156.038386 214.281895 181.78981 187.770326 182.710346 184.407538 209.023885 159.3537 200.305176 146.712447 223.627041 "></polygon>
+            <text id="new!" sketch:type="MSTextLayer" font-family="Oswald Stencil" font-size="65" font-weight="bold" sketch:alignment="middle" fill="#000000">
+                <tspan x="60.9997559" y="142">new!</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

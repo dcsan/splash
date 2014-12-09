@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="700px" height="400px" viewBox="0 0 700 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>xgram-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="xgram-logo" sketch:type="MSArtboardGroup">
+            <path d="M65,344.099726 L115.466729,179.5 L255.481127,238.754884 L65,344.099726 Z" id="Path" fill="#FF9600" sketch:type="MSShapeGroup"></path>
+            <ellipse id="Path" fill="#E95656" sketch:type="MSShapeGroup" cx="216.101562" cy="179.334107" rx="79.1015625" ry="79.3341072"></ellipse>
+            <ellipse id="Path-2" fill="#FF9600" sketch:type="MSShapeGroup" cx="180.147844" cy="181.757943" rx="115.147844" ry="115.757943"></ellipse>
+            <text id="x" sketch:type="MSTextLayer" font-family="Arial Rounded MT Bold" font-size="247" font-weight="normal" fill="#FFFFFF">
+                <tspan x="108" y="249">x</tspan>
+            </text>
+            <text id="gram" sketch:type="MSTextLayer" font-family="Mouse Memoirs" font-size="222" font-weight="normal" fill="#000000">
+                <tspan x="237" y="240">gram</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

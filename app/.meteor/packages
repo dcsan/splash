@@ -7,10 +7,13 @@ standard-app-packages
 autopublish
 insecure
 
-iron-router
+iron:router
 coffeescript
-jade
+mquandalle:jade
 
-famono
-chapters
-splash
+dcsan:landing
+
+# chapters
+# dcsan:splash
+# raix:famono
+

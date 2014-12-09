@@ -1,0 +1,6 @@
+template(name='landingButton')
+
+  a(href="{{this.href}}")
+    .landingButton(cname=cname id=id type=type href="#{this.href}" class=klass)
+      | #{this.text}
+      i.fa.fa-arrow-circle-right
