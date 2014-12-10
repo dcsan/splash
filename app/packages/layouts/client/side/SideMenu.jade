@@ -1,0 +1,14 @@
+template(name='SideMenu')
+
+  .sideMenuOuter#sideMenuOuter
+    .sideMenuBack#sideMenuBack
+    .sideMenuInner
+      each sideMenuItems
+        span.sideItem(url="#{url}" id="#{title}")
+          if icon
+            i.fa(class="{{icon}}") &nbsp;
+            | #{title}
+          else
+            | #{title}
+        br
+

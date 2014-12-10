@@ -1,0 +1,39 @@
+template(name='bottomNav')
+  .bottomNavBar
+
+    if scene.back
+      a(href=scene.back)
+        .btn.btn0
+          //.backBar
+          //- span.navButtonText #{scene.back}
+          span.navButtonLabel
+            i.fa.fa-arrow-circle-left
+
+    //- .btn.btn1#deckButton
+    //-   span.navButtonLabel
+    //-     i.fa.fa-list-alt
+
+    //- a(href="/mapx/")
+    //-   .btn.btn2
+    //-     span.navButtonLabel
+    //-       i.fa.fa-map-marker
+
+
+    //- .btn.btn3#audioButton
+    //-   span.navButtonLabel
+    //-     if player.audio
+    //-       i.fa.fa-microphone
+    //-     else
+    //-       i.fa.fa-microphone-slash
+
+    //- .btn.btn4#notesButton
+    //-   span.navButtonLabel
+    //-     i.fa.fa-comments
+
+    if scene.next
+      .btn.btn5
+        a(href=scene.next)
+          //.nextBar
+            //- span.navButtonText #{scene.next}
+          span.navButtonLabel
+            i.fa.fa-arrow-circle-right

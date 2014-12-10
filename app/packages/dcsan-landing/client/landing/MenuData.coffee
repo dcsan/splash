@@ -7,10 +7,11 @@ MenuData =
   top:
     cname: "topMenu"
     cta1:
-      en: "The most fun and effective"
-      ja: "一番楽しいｘ効果的な"
+      en: "The fun way to learn a language"
+      ja: "一番楽しい言語学習アプリ"
+      # ja: "一番楽しいｘ効果的な"
     cta2:
-      en: "way to study a language"
+      en: ""
       ja: "★言語学習アプリ★今すぐ登録"
     ctaButton:
       en: "Free registration!"
@@ -20,7 +21,7 @@ MenuData =
     {
       img: "/splash/300/blackboard.jpg"
       tag: "map"
-      url: startUrl
+      url: "/lessons"
       style: "background-color: #95D8E9;"
       title:
         en: "Study"
@@ -32,8 +33,8 @@ MenuData =
 
     {
       img: "/splash/300/mapx.jpg"
-      tag: "map"
-      url: startUrl
+      tag: "games"
+      url: "/lessons"    # FIXME - games menu
       style: "background-color: #9dbae9;"
       title:
         en: "Play"
@@ -46,7 +47,7 @@ MenuData =
     {
       img: "/splash/300/lesson-list.jpg"
       tag: "map"
-      url: startUrl
+      url: "/topics"
       style: "background-color: #e59be9;"
       title:
         en: "Discuss"
@@ -55,6 +56,20 @@ MenuData =
         en: "discuss language points with our huge community of fellow learners"
         ja: "文法ポイントを相談できる掲示板とデーターベースがある"
     }
+
+    {
+      img: "/splash/300/lesson-list.jpg"
+      tag: "map"
+      url: "/deck"
+      style: "background-color: #e97a9f;"
+      title:
+        en: "Remember"
+        ja: "覚える"
+      info:
+        en: "Use the provided flash cards to quiz yourself and remember"
+        ja: "フラッシュカードを使って覚えましょう！"
+    }
+
 
   ]
 

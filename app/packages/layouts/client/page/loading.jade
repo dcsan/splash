@@ -1,0 +1,8 @@
+template(name='loading')
+  +StatusBar(text1='loading...')
+
+  +spinner
+
+  div.hugeButton.bottom loading {{sessGet "ddpSize"}}!
+
+  //- +spinner

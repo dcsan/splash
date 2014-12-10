@@ -1,0 +1,27 @@
+template(name='TopNav')
+
+  .fixHeader
+
+    span.crumbSmall
+      if link0
+        a(href=link0)
+          img(src='/images/ux/ui-parts/navburger-wob-50.png')
+          span Top
+      else
+        a(href=topUrl)
+          img(src='/images/ux/ui-parts/navburger-wob-50.png')
+          span Home
+
+      +breadcrumbBlock text=text1 link=link1
+      +breadcrumbBlock text=text2 link=link2
+      +breadcrumbBlock text=text3 link=link3
+
+      span.crumbSmall(style='position:absolute;right:10px;color:#666;')
+        | load: {{sessGet 'ddpSize'}}
+
+// now defined on StatusBar
+template(name='breadcrumbBlock')
+  if text
+    span &nbsp;/&nbsp;
+    span.crumbSmall
+      a(href=link) #{text}

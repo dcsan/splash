@@ -1,16 +1,16 @@
-Meteor.startup ->
+## routes are in the packages
 
-  Router.map ->
 
-    @route '/',
-      action: ->
-        Router.go('/splash')
+# Meteor.startup ->
 
-    @route 'box',
-      path: '/box'
-      # action: Template.box.fam()
+#   Router.map ->
 
-      data: {
-        color: "red"
-      }
+
+#     @route 'box',
+#       path: '/box'
+#       # action: Template.box.fam()
+
+#       data: {
+#         color: "red"
+#       }
 

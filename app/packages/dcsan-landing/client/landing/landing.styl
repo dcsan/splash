@@ -1,5 +1,17 @@
 landingSlabHeight = 300px;
 
+.fixedImageBox {
+  position fixed
+  top 0px
+  left 0px
+  width 100%
+  height 100%
+  z-index 0
+}
+
+.topSpacer {
+  height: 300px
+}
 
 .fixHeaderTop {
   position: fixed;
@@ -13,10 +25,11 @@ landingSlabHeight = 300px;
 }
 
 .topLogo {
-  top: 70px;
-  right: 50px;
-  width: 250px;
-  z-index: 50;
+  position fixed
+  left 0px
+  top 0px
+  z-index 1
+  height 100px
 }
 
 //actor
@@ -40,8 +53,16 @@ landingSlabHeight = 300px;
 
 .landingSlab {
   position: relative
-  min-height: 250px
+  min-height: 150px
+  cursor pointer
+  z-index 100
   // margin-bottom: 20px
+
+  &:hover {
+    transform scale(1.02)
+    box-shadow: 0px 0px 10px 10px rgba(0,0,0, 0.5)
+    z-index 300
+  }
 
   .backStripe {
     position: absolute
@@ -51,19 +72,20 @@ landingSlabHeight = 300px;
     height: 200px
     background-color: white
     z-index: 10
+
   }
 
   .title {
     position: absolute;
-    top: 30px
-    left: 200px;
+    top: 5px
+    left: 160px;
 
     border: 1px solid black
 
     padding-left: 30px;
     padding-right: 30px;  
     font-family: 'Oswald', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     color: white;
     background-color: black;
     z-index: 200;
@@ -71,8 +93,8 @@ landingSlabHeight = 300px;
 
   .infoBox {
     position: absolute;
-    top: 120px;
-    left: 200px;
+    top: 70px;
+    left: 160px;
     margin-right: 10px;
     border: 2px solid black
     
@@ -87,18 +109,49 @@ landingSlabHeight = 300px;
     // background-color: rgba(255,255,255, 0.75);
     z-index: 200;
   }
-
+  
+  // larger thumbNail on landingPage
   .pageImg {
     position: absolute;
-    left: 20px;
-    top:  -10px;
+    left: 30px;
+    top:   0px;
+    height: 150px;
+    width: 150px;
     border: 2px solid black
-    border-radius: 4px
+    border-radius: 50%
     // height: (landingSlabHeight + 20);
-    width: 200px;
     z-index: 100;
     // transform: rotate(-3deg)
     box-shadow: 3px 3px 10px rgba(0,0,0, 0.5)
+  }
+
+
+  // homePage versions
+  .infoBoxSmall {
+    position: absolute;
+    top: 80px;
+    left 160px
+    width 350px
+    padding-right 5%
+    // border 1px solid black
+    font-family: sans-serif;
+    font-size: 20px;
+    color: black;
+    z-index: 200;
+  }
+
+
+  // smaller icon on homePage
+  .pageIcon {
+    position absolute
+    top  -10px
+    left 20px
+    width 130px
+    height 130px
+    border 2px solid black
+    border-radius 50%
+    z-index 100
+    box-shadow 3px 3px 10px rgba(0,0,0, 0.5)
   }
 
 }
@@ -126,7 +179,7 @@ landingSlabHeight = 300px;
     position relative
     top 10px
     font-family 'Mouse Memoirs', sans-serif
-    font-size 25px
+    font-size 45px
     color black
     margin-bottom 60px
     background-color white
@@ -160,3 +213,90 @@ landingSlabHeight = 300px;
   color: white;
   background-color: black;
 }
+
+
+
+.topBubble {
+    position: fixed;
+    top 220px
+    margin-right 5%
+    margin-left 15%
+    z-index 1
+
+    padding: 0px;
+    background: #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 4px solid black;
+    padding: 10px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 30px;
+}
+
+.topBubble:after {
+    margin-right 25%
+    margin-left 35%
+
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -15px;
+}
+
+.topBubble:before {
+    margin-right 25%
+    margin-left 35%
+  
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 18px 18px;
+    border-color: #000 transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+    top: -22px;
+}
+
+
+
+.topBubble.TM {
+}
+
+// .topBubble.BR:after {
+//   content: '';
+//   position: absolute;
+//   border-style: solid;
+//   border-width: 20px 15px 0;
+//   border-color: #FFFFFF transparent;
+//   display: block;
+//   width: 0;
+//   z-index: 1;
+//   margin-left: 60%;
+//   top: 100%
+//   left: 15%;
+// }
+
+// .topBubble.BR:before {
+//   content: '';
+//   position: absolute;
+//   border-style: solid;
+//   border-width: 27px 18px 0;
+//   border-color: #000000 transparent;
+//   display: block;
+//   width: 0;
+//   z-index: 0;
+//   margin-left: 60%;
+//   top: 100%
+//   left: 15%;
+// }
+
+
+
+

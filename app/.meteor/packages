@@ -12,6 +12,9 @@ coffeescript
 mquandalle:jade
 
 dcsan:landing
+dcsan:layouts
+
+mizzao:bootstrap-3
 
 # chapters
 # dcsan:splash

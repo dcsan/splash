@@ -6,12 +6,12 @@ UI.registerHelper "asset", (path, alt) ->
   return s
 
 
-UI.registerHelper "hl", (obj) ->
+UI.registerHelper "homehl", (obj) ->
   console.log("hl", obj)
   return unless obj
   hl = Session.get('hl') or 'en'
   return obj[hl]
 
-UI.registerHelper "tl", (obj) ->
+UI.registerHelper "hometl", (obj) ->
   tl = Session.get('tl') or 'en'
   return obj[tl]

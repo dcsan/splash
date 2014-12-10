@@ -1,34 +1,34 @@
 template(name='landing')
 
-  a(href=menuData.startUrl)
-    img.topImageMain(src='/splash/main/bgAbby.jpg')
-    +topLogo
+  +topLogo
+  .fixedImageBox(style="background-image: url(/splash/main/bgAbby.jpg);height: 500px")
+  .topBubble.TM {{{homehl menuData.top.cta1 }}}
 
-  +ClickHereBox(menuData=menuData)
+  .topSpacer
+
+  +ClickHereBox(data=this)
 
   each menuData.items
-    .landingSlab(style="{{style}}")
-      a(href="/scenes/intro/start")
-        img.pageImg(src="{{img}}")
-        .title {{hl title}}
-        .infoBox {{hl info}}
+    a(href=url)
+      .landingSlab(style="{{style}}")
+        img.pageIcon(src="{{img}}")
+        .title {{homehl title}}
+        .infoBoxSmall {{homehl info}}
 
-  +ClickHereBox(menuData=menuData)
+  +ClickHereBox(data=this)
+
+  br
+  br
+  br
+  br
 
 
 template(name='ClickHereBox')
 
   .regNowBox
-    span.heading {{{hl menuData.top.cta1 }}}
-    br
-    span.heading {{{hl menuData.top.cta2 }}}
+    if data.isLanding
+      +landingButton(href=data.menuData.startUrl text="START!!")
 
-    if loggedIn
-      a(href=menuData.startUrl text='continue')
-        +landingButton(href=menuData.startUrl text="START!!")
-      br
-
-    else
-      a(href=menuData.startUrl text='continue')
-        +landingButton(href=menuData.startUrl text="START!")
+    //- else
+    //-   +landingButton(href=data.menuData.startUrl text="START!")
 
